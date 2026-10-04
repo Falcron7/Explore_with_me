@@ -3,260 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trekking?</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Adventure?</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@1,300&family=Poppins:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@1,300&family=Poppins:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Bellota Text', sans-serif;
         }
 
-        body, html {
+        html,
+        body {
             width: 100%;
-            height: 100vh;
-            background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
+            height: 100%;
         }
 
-        .confirmation {
-            display: none;
-            width: 400px;
-            height: 500px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
+        body {
+            overflow: hidden;
 
-        .confirmation h1 {
-            font-style: bolder;
-            font-size: 50px;
-            font-weight: 700;
-            text-shadow: 0px 3px 6px rgb(147, 77, 77);
-            line-height: 90px;
-        }
+            font-family: 'Poppins', sans-serif;
 
-        .fix-gif {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 200px;
-        }
-
-        .fix-gifimg {
-            border-radius: 10px;
-            width: 384px;
-            height: 216px;
-
-            /* Trekking / mountain visual */
-            background-image: url("https://media.giphy.com/media/3o7TKsQ8UQ4G1L5p5C/giphy.gif");
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.15)
+                ),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
         }
 
-        .container h1 {
-            margin-bottom: 20px;
-            margin-top: 50px;
-            font-style: bolder;
-            font-size: 50px;
-            font-weight: 700;
-            text-shadow: 0px 3px 6px rgb(147, 77, 77);
-        }
 
-        #fix {
-            margin-top: 30px;
-            border: none;
-            width: 400px;
-            height: 50px;
-            font-size: 30px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.45);
-            backdrop-filter: blur(5px);
-            border: 1px solid black;
-            font-weight: 550;
-        }
+        /* =================================
+           FIRST PAGE
+        ================================= */
 
         .container {
-            width: 400px;
-            height: 500px;
+            width: 420px;
+            min-height: 550px;
+
             position: absolute;
+
             left: 50%;
-            top: 40%;
+            top: 50%;
+
             transform: translate(-50%, -50%);
+
             text-align: center;
+
+            padding: 20px;
         }
+
+
+        .container h1 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+
+            font-family: 'Bellota Text', sans-serif;
+
+            font-size: 42px;
+            font-weight: 700;
+
+            line-height: 1.2;
+
+            color: #111;
+
+            text-shadow:
+                0px 3px 8px rgba(255, 255, 255, 0.8);
+        }
+
+
+        /* FIRST VIDEO */
 
         .gif {
             display: flex;
+
             justify-content: center;
             align-items: center;
+
             width: 100%;
-            height: 300px;
+            height: 280px;
         }
 
+
         .gifimg {
-            border-radius: 10px;
             width: 384px;
             height: 254px;
 
-            /* Trekking / hiking visual */
-            background-image: url("https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif");
+            border-radius: 16px;
 
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
+
+            display: block;
+
+            box-shadow:
+                0px 10px 30px rgba(0, 0, 0, 0.25);
         }
+
+
+        /* =================================
+           ANSWER BUTTONS
+        ================================= */
 
         .answer-box {
             display: flex;
-            justify-content: space-evenly;
+
+            justify-content: center;
             align-items: center;
-            padding: 10px;
-            margin-top: 5px;
+
+            gap: 35px;
+
             width: 100%;
-            height: 80px;
-            gap: 50px;
+
+            margin-top: 10px;
         }
+
 
         .answer {
             border: none;
-            width: 100px;
-            height: 50px;
-            font-size: 30px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.45);
-            backdrop-filter: blur(5px);
-            border: 1px solid black;
-            font-weight: 550;
+
+            width: 110px;
+            height: 52px;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            border-radius: 12px;
+
+            background: rgba(255, 255, 255, 0.55);
+
+            backdrop-filter: blur(8px);
+
+            border: 1px solid rgba(0, 0, 0, 0.6);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
         }
 
+
         .answer:hover {
-            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.449);
+            transform: translateY(-3px);
+
+            background: rgba(255, 255, 255, 0.8);
+
+            box-shadow:
+                0px 8px 20px rgba(0, 0, 0, 0.2);
         }
+
+
+        .answer:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =================================
+           SECOND PAGE
+        ================================= */
+
+        .confirmation {
+            display: none;
+
+            width: 450px;
+            min-height: 550px;
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+        .confirmation h1 {
+            margin-top: 10px;
+            margin-bottom: 8px;
+
+            font-family: 'Bellota Text', sans-serif;
+
+            font-size: 42px;
+            font-weight: 700;
+
+            line-height: 1.2;
+
+            color: #111;
+
+            text-shadow:
+                0px 3px 8px rgba(255, 255, 255, 0.8);
+        }
+
+
+        .confirmation p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+
+            font-size: 17px;
+            font-weight: 500;
+
+            color: #222;
+        }
+
+
+        /* SECOND VIDEO */
+
+        .fix-gif {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 270px;
+        }
+
+
+        .fix-gifimg {
+            width: 384px;
+            height: 216px;
+
+            border-radius: 16px;
+
+            object-fit: cover;
+
+            display: block;
+
+            box-shadow:
+                0px 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* FINAL BUTTON */
+
+        #fix {
+            width: 260px;
+            height: 52px;
+
+            font-size: 17px;
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
 
         @media screen and (max-width: 600px) {
 
-            .container {
+            .container,
+            .confirmation {
                 width: 100%;
+
+                padding: 20px;
             }
 
-            .container h1 {
-                margin-top: 20px;
-                padding: 8px;
-                font-size: 35px;
+
+            .container h1,
+            .confirmation h1 {
+                font-size: 34px;
+
+                line-height: 1.25;
+
+                margin-top: 10px;
+                margin-bottom: 15px;
             }
 
-            .answer {
-                font-size: 20px;
-                padding: 5px;
+
+            /* First video */
+
+            .gif {
+                height: 240px;
             }
+
 
             .gifimg {
-                border-radius: 10px;
                 width: 300px;
                 height: 198px;
 
-                background-image: url("https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif");
-
-                background-size: cover;
-                background-position: center;
+                border-radius: 14px;
             }
+
+
+            /* Buttons */
+
+            .answer-box {
+                gap: 25px;
+            }
+
+
+            .answer {
+                width: 100px;
+                height: 48px;
+
+                font-size: 18px;
+            }
+
+
+            /* Second page */
+
+            .confirmation p {
+                font-size: 15px;
+            }
+
 
             .fix-gif {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                height: 200px;
+                height: 220px;
             }
 
+
             .fix-gifimg {
-                border-radius: 10px;
                 width: 300px;
                 height: 168px;
 
-                background-image: url("https://media.giphy.com/media/3o7TKsQ8UQ4G1L5p5C/giphy.gif");
-
-                background-size: cover;
-                background-position: center;
+                border-radius: 14px;
             }
+
 
             #fix {
-                margin-top: 30px;
-                border: none;
-                width: 250px;
-                height: 50px;
-                font-size: 24px;
-                border-radius: 10px;
-                background: rgba(255,255,255,0.45);
-                backdrop-filter: blur(5px);
-                border: 1px solid black;
-                font-weight: 550;
-            }
+                width: 240px;
 
-            .confirmation {
-                display: none;
-                width: 100%;
-                height: 500px;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-            }
-
-            .confirmation h1 {
-                font-size: 35px;
-                padding: 8px;
+                font-size: 16px;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
+
+    <!-- =================================
+         FIRST PAGE
+    ================================= -->
 
     <div class="container">
 
         <div class="question">
+
             <h1>
-                Wanna go trekking with me? 🏔️🥾👀
+                You, me, and a little adventure.<br>
+                What do you say? 👀
             </h1>
+
         </div>
+
+
+        <!-- 1A.mp4 -->
 
         <div class="gif">
-            <div class="gifimg"></div>
+
+            <video
+                class="gifimg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+
+                <source src="1A.mp4" type="video/mp4">
+
+                Your browser does not support video.
+
+            </video>
+
         </div>
+
+
+        <!-- YES / NO -->
 
         <div class="answer-box">
-            <button class="answer" id="yes">Yes!!!</button>
-            <button class="answer" id="no">No</button>
-        </div>
 
-    </div>
+            <button
+                class="answer"
+                id="yes">
+
+                Yes
+
+            </button>
 
 
-    <div class="confirmation">
+            <button
+                class="answer"
+                id="no">
 
-        <h1>
-            YAYYYYY!!! My trekking partner 🏔️🥾❤️
-        </h1>
+                No
 
-        <div class="question">
-
-            <div class="fix-gif">
-                <div class="fix-gifimg"></div>
-            </div>
-
-            <button class="answer" id="fix">
-                Okay, Let's Plan It 👀
             </button>
 
         </div>
@@ -264,55 +408,174 @@
     </div>
 
 
+
+    <!-- =================================
+         SECOND PAGE
+    ================================= -->
+
+    <div class="confirmation">
+
+
+        <h1>
+            I had a feeling<br>
+            you'd say yes.
+        </h1>
+
+
+        <p>
+            Now let's make it happen.
+        </p>
+
+
+        <!-- 2A.mp4 -->
+
+        <div class="fix-gif">
+
+            <video
+                class="fix-gifimg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto">
+
+                <source src="2A.mp4" type="video/mp4">
+
+                Your browser does not support video.
+
+            </video>
+
+        </div>
+
+
+        <!-- WHATSAPP -->
+
+        <button
+            class="answer"
+            id="fix">
+
+            Let's make it happen →
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================= -->
+
     <script>
 
-        const yes = document.querySelector("#yes");
-        const no = document.querySelector("#no");
-        const confirmation = document.querySelector(".confirmation");
-        const container = document.querySelector(".container");
+        const yes =
+            document.querySelector("#yes");
 
 
-        const yesAnswerMethod = () => {
-
-            container.style.display = 'none';
-
-            confirmation.style.display = 'block';
-
-        };
+        const no =
+            document.querySelector("#no");
 
 
-        const noAnswerMethod = () => {
-
-            no.style.position = 'absolute';
-
-            const xPosition = Math.floor(
-                Math.random() *
-                (container.clientWidth - no.offsetWidth)
-            );
-
-            const yPosition = Math.floor(
-                Math.random() *
-                (container.clientHeight - no.offsetHeight)
-            );
-
-            no.style.top = `${yPosition}px`;
-
-            no.style.left = `${xPosition}px`;
-
-        };
+        const confirmation =
+            document.querySelector(".confirmation");
 
 
-        no.addEventListener('click', noAnswerMethod);
+        const container =
+            document.querySelector(".container");
 
-        yes.addEventListener('click', yesAnswerMethod);
 
 
-        document.getElementById("fix").addEventListener("click", function () {
+        /* =================================
+           YES BUTTON
+        ================================= */
 
-            window.location =
-                "https://wa.me/+919873010908?text=Okayyy%20you%20said%20yes%20👀%20Now%20we%20need%20to%20plan%20our%20trekking%20adventure%20🏔️🥾😂";
+        yes.addEventListener("click", function () {
 
-        }, false);
+            container.style.display = "none";
+
+            confirmation.style.display = "block";
+
+
+            /* Start second video */
+
+            const secondVideo =
+                document.querySelector(".fix-gifimg");
+
+            secondVideo.currentTime = 0;
+
+            secondVideo.play();
+
+        });
+
+
+
+        /* =================================
+           NO BUTTON
+        ================================= */
+
+        no.addEventListener("click", function () {
+
+            no.style.position = "absolute";
+
+
+            const maxX =
+                container.clientWidth -
+                no.offsetWidth;
+
+
+            const maxY =
+                container.clientHeight -
+                no.offsetHeight;
+
+
+            const xPosition =
+                Math.floor(
+                    Math.random() *
+                    Math.max(maxX, 1)
+                );
+
+
+            const yPosition =
+                Math.floor(
+                    Math.random() *
+                    Math.max(maxY, 1)
+                );
+
+
+            no.style.left =
+                `${xPosition}px`;
+
+
+            no.style.top =
+                `${yPosition}px`;
+
+        });
+
+
+
+        /* =================================
+           WHATSAPP BUTTON
+        ================================= */
+
+        document
+            .getElementById("fix")
+            .addEventListener("click", function () {
+
+
+                const message =
+                    "I said yes… now make me wonder why I didn’t say yes sooner. 👀";
+
+
+                const whatsappURL =
+                    "https://wa.me/919873010908?text=" +
+                    encodeURIComponent(message);
+
+
+                window.location.href =
+                    whatsappURL;
+
+            });
 
     </script>
 
